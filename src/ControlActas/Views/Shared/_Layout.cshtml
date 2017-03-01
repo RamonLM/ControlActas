@@ -5,33 +5,60 @@
     <title>@ViewBag.Title</title>
     <meta charset="utf-8" />
     <link rel="icon" href="~/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootswatch/yeti/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="~/css/style.css" />
 </head>
 
 <body>
     <div id="sidebar">
         <img src="~/img/avatar.jpg" alt="avatar" class="avatar" />
-        <span id="username">Ramón López</span>
-        <ul class="menu">
-            <li class="active"><a asp-controller="App" asp-action="Index">Home</a></li>
-            <li><a asp-controller="App" asp-action="About">About</a></li>
-            <li><a asp-controller="App" asp-action="Contact">Contact</a></li>
+        <span id="username">Username</span>
+        <ul class="nav">
+            <li class="active"><a asp-controller="App" asp-action="Index">Inicio</a></li>
+            <li><a asp-controller="App" asp-action="About">Acerca de</a></li>
+            <li><a asp-controller="App" asp-action="Contact">Contacto</a></li>
         </ul>
     </div>
     <div id="wrapper">
-        <div id="main">
-            <div>
-                <button id="sidebarToggle">Toggle Sidebar</button>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav navbar-left">
+                    <li>
+                        <button id="sidebarToggle" class="btn btn-primary">
+                            <i class="fa fa-angle-left"></i>
+                        </button>
+                    </li>
+                </ul>
+                <a asp-controller="App" asp-action="Index" class="navbar-brand">Control de Actas</a>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" class="btn btn-sm btn-info">
+                            <i class="fa fa-save"></i> Guardar
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="btn btn-sm btn-info">
+                            <i class="fa fa-print"></i> Imprimir
+                        </a>
+                    </li>
+                </ul>
             </div>
+        </nav>
+        <div id="main" class="container-fluid">
             @RenderBody()
         </div>
-        <div id="footer">
-            &copy; 2017 Universidad Autónoma de Baja California
+        <div id="footer" class="container-fluid">
+            <div class="navbar navbar-inverse navbar-fixed-bottom">
+                <h4 class="text-center text-info">&copy; 2017 Universidad Autónoma de Baja California</h4>
+            </div>
         </div>
     </div>
 
     <script type="text/javascript" src="~/lib/jQuery/dist/jquery.min.js"></script>
-    @RenderSection("scripts", false)
+    <script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="~/js/script.js"></script>
+    @RenderSection("scripts", false)
 </body>
 </html>

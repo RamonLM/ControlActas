@@ -1,17 +1,26 @@
-﻿@{ 
+﻿@{
     ViewBag.Title = "Control de Actas | Inicio";
 }
 
-<h3>Sistema de control de actas de UABC.</h3>
-<p>Este sistema fue creado por equipo 2 de Ingeniería de Software 482.2017-1</p>
-<form>
-    <div>
-        <label>Date</label>
-        <input type="text" />
+<div class="row">
+    <div class="col-md-6">
+        <h3>Sistema de control de actas de UABC.</h3>
+        <p>Este sistema fue creado por equipo 2 de Ingeniería de Software 482.2017-1</p>
+        <form>
+            <div class="form-group">
+                <label>Fecha</label>
+                <input class="form-control" type="text" />
+            </div>
+            <div class="form-group">
+                <label>Lugar</label>
+                <input class="form-control" type="text" />
+            </div>
+            <div class="form-group">
+                <input class="btn btn-success" type="submit" value="Agregar" />
+            </div>
+        </form>
     </div>
-    <div>
-        <label>Location</label>
-        <input type="text" />
+    <div class="col-md-6">
+        <h2>Mapa</h2>
     </div>
-    <div><input type="submit" value="Add" /></div>
-</form>
+</div>
