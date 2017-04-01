@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.0/",
-    "signature": "ebf640a339eefc8e6a4409278c0f1a53154f2a52"
+    "signature": "93b8afa77d7494bc9830fa0ad116325c976a7fde"
   },
   "compilationOptions": {
     "defines": [
@@ -27,7 +27,8 @@
           "Microsoft.Extensions.Configuration.Json": "1.0.0",
           "Microsoft.EntityFrameworkCore": "1.1.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "1.1.1",
-          "Microsoft.EntityFrameworkCore.Design": "1.1.0"
+          "Microsoft.EntityFrameworkCore.Design": "1.1.0",
+          "Microsoft.Extensions.Logging.Debug": "1.1.1"
         },
         "compile": {
           "ControlActas.dll": {}
@@ -929,6 +930,15 @@
         },
         "compile": {
           "lib/netstandard1.3/Microsoft.Extensions.Logging.Console.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Logging.Debug/1.1.1": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "1.1.1",
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.Extensions.Logging.Debug.dll": {}
         }
       },
       "Microsoft.Extensions.ObjectPool/1.0.0": {
@@ -2717,7 +2727,8 @@
           "Microsoft.Extensions.Configuration.Json": "1.0.0",
           "Microsoft.EntityFrameworkCore": "1.1.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "1.1.1",
-          "Microsoft.EntityFrameworkCore.Design": "1.1.0"
+          "Microsoft.EntityFrameworkCore.Design": "1.1.0",
+          "Microsoft.Extensions.Logging.Debug": "1.1.1"
         },
         "runtime": {
           "ControlActas.dll": {}
@@ -3622,6 +3633,15 @@
         },
         "runtime": {
           "lib/netstandard1.3/Microsoft.Extensions.Logging.Console.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Logging.Debug/1.1.1": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "1.1.1",
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.Extensions.Logging.Debug.dll": {}
         }
       },
       "Microsoft.Extensions.ObjectPool/1.0.0": {
@@ -5664,6 +5684,11 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-GN4gFFONP12KbFEG9rNFpXuz6D2Tybcm8+c1wilaQ1eSl9zVX0gVRrKw/YRwxdwbM3eK7nWfRRqJaQPzOjtLnA=="
+    },
+    "Microsoft.Extensions.Logging.Debug/1.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pYl2TMUTi0RUirmYcWnQADCPFoNjakRbvKhRKC2J3RSpkR1l+kO+u8vd+XbKXA7knM8ijgX/0Jrht5+BD07TDg=="
     },
     "Microsoft.Extensions.ObjectPool/1.0.0": {
       "type": "package",

@@ -44,6 +44,7 @@ namespace ControlActas
             services.AddDbContext<LibraryContext>();
             services.AddScoped<ILibraryRepository, LibraryRepository>();
             services.AddTransient<LibraryContextSeedData>();
+            services.AddLogging();
             services.AddMvc();
         }
 
@@ -55,6 +56,11 @@ namespace ControlActas
             if (_env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                loggerFactory.AddDebug(LogLevel.Information);
+            }
+            else
+            {
+                loggerFactory.AddDebug(LogLevel.Error);
             }
 
             app.UseStaticFiles();

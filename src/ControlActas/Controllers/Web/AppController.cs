@@ -3,6 +3,7 @@ using ControlActas.Services;
 using ControlActas.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -17,18 +18,28 @@ namespace ControlActas.Controllers.Web
         private IMailService _mailService;
         private IConfigurationRoot _config;
         private ILibraryRepository _repository;
+        private ILogger<AppController> _logger;
 
-        public AppController(IMailService mailService, IConfigurationRoot config, ILibraryRepository repository)
+        public AppController(IMailService mailService, IConfigurationRoot config, ILibraryRepository repository, ILogger<AppController> logger)
         {
             _mailService = mailService;
             _config = config;
             _repository = repository;
+            _logger = logger;
         }
 
         public IActionResult Index()
         {
-            var data = _repository.GetAllUsers();
-            return View(data);
+            try
+            {
+                var data = _repository.GetAllUsers();
+                return View(data);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Failed to get Users in Index page: " + ex.Message);
+                return Redirect("/error");
+            }
         }
 
         public IActionResult Contact()
