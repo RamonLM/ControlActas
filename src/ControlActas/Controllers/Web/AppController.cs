@@ -1,4 +1,5 @@
-﻿using ControlActas.Services;
+﻿using ControlActas.Models;
+using ControlActas.Services;
 using ControlActas.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -15,16 +16,19 @@ namespace ControlActas.Controllers.Web
     {
         private IMailService _mailService;
         private IConfigurationRoot _config;
+        private ILibraryRepository _repository;
 
-        public AppController(IMailService mailService, IConfigurationRoot config)
+        public AppController(IMailService mailService, IConfigurationRoot config, ILibraryRepository repository)
         {
             _mailService = mailService;
             _config = config;
+            _repository = repository;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var data = _repository.GetAllUsers();
+            return View(data);
         }
 
         public IActionResult Contact()

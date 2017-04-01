@@ -1,5 +1,8 @@
 {
   "MailSettings": {
-    "ToAddress":  "ramon@correo.com"
+    "ToAddress": "ramon@correo.com"
+  },
+  "ConnectionStrings": {
+    "LibraryContextConnection": "Data Source=(localdb)\\MSSQLLocalDB;Database=LibraryDB;Trusted_Connection=true;MultipleActiveResultSets=true"
   }
 }
