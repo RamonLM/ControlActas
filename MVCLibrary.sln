@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ControlActas", "src\ControlActas\ControlActas.xproj", "{9B31717A-6BB4-4FB2-87D9-DAC4E0A3ACED}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MVCLibrary", "src\ControlActas\MVCLibrary.xproj", "{9B31717A-6BB4-4FB2-87D9-DAC4E0A3ACED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
