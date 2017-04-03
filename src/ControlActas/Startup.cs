@@ -10,6 +10,9 @@ using Microsoft.Extensions.Logging;
 using ControlActas.Services;
 using Microsoft.Extensions.Configuration;
 using ControlActas.Models;
+using Newtonsoft.Json.Serialization;
+using AutoMapper;
+using ControlActas.ViewModels;
 
 namespace ControlActas
 {
@@ -45,12 +48,21 @@ namespace ControlActas
             services.AddScoped<ILibraryRepository, LibraryRepository>();
             services.AddTransient<LibraryContextSeedData>();
             services.AddLogging();
-            services.AddMvc();
+            services.AddMvc().AddJsonOptions(config =>
+            {
+                config.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory, LibraryContextSeedData seeder)
         {
+            Mapper.Initialize(config =>
+            {
+                config.CreateMap<UserViewModel, User>().ReverseMap();
+                config.CreateMap<OrderViewModel, BookOrder>().ReverseMap();
+            });
+
             loggerFactory.AddConsole();
 
             if (_env.IsDevelopment())
